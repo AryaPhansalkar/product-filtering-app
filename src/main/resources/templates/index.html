@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Product Filter</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -24,31 +25,8 @@
     <tbody id="tableBody"></tbody>
 </table>
 
-<script>
-    async function loadProducts() {
-        const price = document.getElementById("price").value;
-        const category = document.getElementById("category").value;
 
-        let url = "/api/products?";
-        if (price) url += "price=" + price + "&";
-        if (category) url += "category=" + category;
-
-        const res = await fetch(url);
-        const data = await res.json();
-
-        const table = document.getElementById("tableBody");
-        table.innerHTML = "";
-
-        data.forEach(p => {
-            const row = `<tr>
-            <td>${p.name}</td>
-            <td>${p.category}</td>
-            <td>${p.price}</td>
-        </tr>`;
-            table.innerHTML += row;
-        });
-    }
-</script>
+<script src="/script.js" defer></script>
 
 </body>
 </html>
