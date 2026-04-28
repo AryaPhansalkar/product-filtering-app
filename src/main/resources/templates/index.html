@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Filter</title>
+</head>
+<body>
+
+<h2>Filter Products</h2>
+
+<input type="number" id="price" placeholder="Max Price">
+<input type="text" id="category" placeholder="Category">
+<button onclick="loadProducts()">Filter</button>
+
+<hr>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Category</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+    async function loadProducts() {
+        const price = document.getElementById("price").value;
+        const category = document.getElementById("category").value;
+
+        let url = "/api/products?";
+        if (price) url += "price=" + price + "&";
+        if (category) url += "category=" + category;
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        const table = document.getElementById("tableBody");
+        table.innerHTML = "";
+
+        data.forEach(p => {
+            const row = `<tr>
+            <td>${p.name}</td>
+            <td>${p.category}</td>
+            <td>${p.price}</td>
+        </tr>`;
+            table.innerHTML += row;
+        });
+    }
+</script>
+
+</body>
+</html>
