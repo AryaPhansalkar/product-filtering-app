@@ -44,7 +44,7 @@ Download the project as ZIP.
 * Click **Open → Select the extracted folder**
 * In IntelliJ click on settings button which you will see on the top right side of the screen
 * Click **Project Structure**
-* Ensure that SDK has Orcale OpenJDK (17 or higher depending the java version you selected in first step)
+* Ensure that SDK has Oracle OpenJDK (17 or higher depending the java version you selected in first step)
 * Apply and close the tab when finished
 
 ---
