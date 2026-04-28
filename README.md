@@ -42,6 +42,10 @@ Download the project as ZIP.
 * Extract the ZIP file
 * Open IntelliJ
 * Click **Open → Select the extracted folder**
+* In IntelliJ click on settings button which you will see on the top right side of the screen
+* Click **Project Structure**
+* Ensure that SDK has Orcale OpenJDK (17 or higher depending the java version you selected in first step)
+* Apply and close the tab when finished
 
 ---
 
@@ -57,6 +61,7 @@ After editing `pom.xml`:
 ---
 
 ### 4) Push Project to GitHub
+Create a repository on github and ensure it is public then write the following commands in the project terminal:
 
 ```bash
 git init
@@ -71,9 +76,10 @@ git push -u origin main
 
 ### 5) Create Database on Railway
 
-1. Go to Railway dashboard
-2. Click **New Project → Add Database → MySQL**
-3. Railway will automatically generate:
+1. On browser search Railway deploy. 
+2. Go to Railway dashboard (You have to signup if you have not done it before)
+3. Click **New Project → Add Database → MySQL**
+4. Railway will automatically generate:
 
    * MYSQLHOST
    * MYSQLPORT
